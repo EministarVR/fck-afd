@@ -1,0 +1,47 @@
+[
+  {
+    "id": "source_1",
+    "title": "Verfassungsschutzbericht 2023",
+    "date": "2023-06-15",
+    "summary": "Einstufung mehrerer AfD-Landesverbände als gesichert rechtsextrem",
+    "url": "https://www.verfassungsschutz.de/",
+    "type": "government",
+    "reliability": "high"
+  },
+  {
+    "id": "source_2",
+    "title": "BKA Statistik: Politisch motivierte Kriminalität",
+    "date": "2023-05-20",
+    "summary": "Anstieg rechtsextremer Gewalttaten in Korrelation mit AfD-Wahlerfolgen",
+    "url": "https://www.bka.de/",
+    "type": "government",
+    "reliability": "high"
+  },
+  {
+    "id": "source_3",
+    "title": "Amadeu Antonio Stiftung: Monitoring rechter Gewalt",
+    "date": "2023-09-10",
+    "summary": "Dokumentation von Hassverbrechen und deren Verbindung zu rechter Rhetorik",
+    "url": "https://www.amadeu-antonio-stiftung.de/",
+    "type": "ngo",
+    "reliability": "high"
+  },
+  {
+    "id": "source_4",
+    "title": "Correctiv: Fact-Checking AfD",
+    "date": "2023-11-03",
+    "summary": "Systematische Analyse von Falschaussagen und Desinformation",
+    "url": "https://correctiv.org/",
+    "type": "news",
+    "reliability": "high"
+  },
+  {
+    "id": "source_5",
+    "title": "Bundestag Dokumentation: Ordnungsrufe",
+    "date": "2023-08-12",
+    "summary": "Parlamentarische Verstöße und Sanktionen gegen AfD-Abgeordnete",
+    "url": "https://www.bundestag.de/",
+    "type": "government",
+    "reliability": "high"
+  }
+]

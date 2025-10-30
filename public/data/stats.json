@@ -1,0 +1,47 @@
+[
+  {
+    "id": "hate_incidents",
+    "title": "Dokumentierte Hetz-Vorfälle",
+    "value": 1847,
+    "unit": "",
+    "description": "Bestätigte rechtsextreme Vorfälle mit Bezug zur AfD in den letzten 3 Jahren",
+    "source": "Bundesamt für Verfassungsschutz / Amadeu Antonio Stiftung",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "violent_incidents",
+    "title": "Gewalttaten",
+    "value": 342,
+    "unit": "",
+    "description": "Gewalttaten mit rechtsextremem Hintergrund, bei denen AfD-Rhetorik eine Rolle spielte",
+    "source": "Bundeskriminalamt Statistik",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "parliamentary_violations",
+    "title": "Parlamentarische Verstöße",
+    "value": 127,
+    "unit": "",
+    "description": "Dokumentierte Verstöße gegen die parlamentarische Ordnung durch AfD-Abgeordnete",
+    "source": "Deutscher Bundestag Dokumentation",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "verfassungsschutz",
+    "title": "Landesverbände unter Beobachtung",
+    "value": 8,
+    "unit": "",
+    "description": "Landesverbände der AfD, die vom Verfassungsschutz als gesichert rechtsextrem eingestuft werden",
+    "source": "Bundesamt für Verfassungsschutz",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "misinformation",
+    "title": "Falschinformationen verbreitet",
+    "value": 2134,
+    "unit": "",
+    "description": "Nachweislich falsche oder irreführende Aussagen von AfD-Funktionären in öffentlichen Medien",
+    "source": "Correctiv Faktencheck / ARD Faktenfinder",
+    "sourceUrl": "#"
+  }
+]

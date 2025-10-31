@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,12 +16,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+  const isActive = (path: string) => {
+    return location.pathname === path;
   };
 
   return (
@@ -31,36 +29,58 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 md:px-8 flex items-center justify-between h-16">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <img
             src="https://star-dev.xyz/fck.jpg"
             alt="FCK Logo"
-            className="h-6 w-6 rounded-sm object-cover"
+            className="h-7 w-7 rounded-sm object-cover"
             loading="lazy"
           />
           <div className="text-sm font-bold tracking-tight">FUCK-AFD</div>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <button
-            onClick={() => scrollToSection("arguments")}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          <Link
+            to="/"
+            className={`text-sm transition-colors ${
+              isActive("/") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/facts"
+            className={`text-sm transition-colors ${
+              isActive("/facts") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
           >
             Fakten
-          </button>
-          <button
-            onClick={() => scrollToSection("statistics")}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          </Link>
+          <Link
+            to="/statistics"
+            className={`text-sm transition-colors ${
+              isActive("/statistics") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
           >
             Statistiken
-          </button>
-          <button
-            onClick={() => scrollToSection("sources")}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          </Link>
+          <Link
+            to="/sources"
+            className={`text-sm transition-colors ${
+              isActive("/sources") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
           >
             Quellen
-          </button>
+          </Link>
+          <Link
+            to="/about"
+            className={`text-sm transition-colors ${
+              isActive("/about") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Über
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -82,24 +102,51 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-card border-t border-border">
           <div className="container mx-auto px-6 py-4 space-y-1">
-            <button
-              onClick={() => scrollToSection("arguments")}
-              className="block w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+            <Link
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/facts"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/facts") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Fakten
-            </button>
-            <button
-              onClick={() => scrollToSection("statistics")}
-              className="block w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+            </Link>
+            <Link
+              to="/statistics"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/statistics") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Statistiken
-            </button>
-            <button
-              onClick={() => scrollToSection("sources")}
-              className="block w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+            </Link>
+            <Link
+              to="/sources"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/sources") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Quellen
-            </button>
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/about") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Über
+            </Link>
           </div>
         </div>
       )}

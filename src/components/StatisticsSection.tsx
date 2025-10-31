@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { BarChart3 } from "lucide-react";
 import StatBar from "./StatBar";
 
 interface Stat {
@@ -51,6 +53,17 @@ const StatisticsSection = () => {
               index={index}
             />
           ))}
+        </div>
+
+        {/* CTA to Statistics page */}
+        <div className="text-center mt-16 animate-fade-in-up">
+          <Link
+            to="/statistics"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all hover:scale-105 group"
+          >
+            <BarChart3 className="h-5 w-5" />
+            <span>Vollständige Statistiken ansehen</span>
+          </Link>
         </div>
       </div>
     </section>

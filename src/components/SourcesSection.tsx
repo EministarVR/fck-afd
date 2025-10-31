@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FileText } from "lucide-react";
 import SourceCard from "./SourceCard";
 
 interface Source {
@@ -44,6 +46,17 @@ const SourcesSection = () => {
               type={source.type}
             />
           ))}
+        </div>
+
+        {/* CTA to Sources page */}
+        <div className="text-center mt-16 animate-fade-in-up">
+          <Link
+            to="/sources"
+            className="inline-flex items-center gap-3 px-8 py-4 border-2 border-foreground/30 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105 group"
+          >
+            <FileText className="h-5 w-5" />
+            <span>Alle Quellen durchsuchen</span>
+          </Link>
         </div>
       </div>
     </section>

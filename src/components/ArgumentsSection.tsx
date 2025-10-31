@@ -1,4 +1,5 @@
-import { Shield, AlertTriangle, Scale, Users, TrendingDown, Flame } from "lucide-react";
+import { Shield, AlertTriangle, Scale, Users, TrendingDown, Flame, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import ArgumentCard from "./ArgumentCard";
 
 const ArgumentsSection = () => {
@@ -68,6 +69,17 @@ const ArgumentsSection = () => {
               delay={index * 100}
             />
           ))}
+        </div>
+
+        {/* CTA to Facts page */}
+        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
+          <Link
+            to="/facts"
+            className="inline-flex items-center gap-3 px-8 py-4 border-2 border-foreground text-foreground font-semibold hover:bg-foreground hover:text-background transition-all hover:scale-105 group"
+          >
+            <span>Alle Fakten im Detail</span>
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

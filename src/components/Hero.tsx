@@ -1,5 +1,6 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, BookOpen, BarChart3, FileText } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -89,13 +90,42 @@ const Hero = () => {
               </div>
             </div>
 
-            <button
-              onClick={scrollToStats}
-              className="group inline-flex items-center space-x-3 px-8 py-4 bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all hover:scale-105 hover:glow-red"
-            >
-              <span>Fakten & Zahlen</span>
-              <ArrowDown className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={scrollToStats}
+                className="group inline-flex items-center space-x-3 px-8 py-4 bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all hover:scale-105"
+              >
+                <ArrowDown className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                <span>Mehr erfahren</span>
+              </button>
+
+              <Link
+                to="/facts"
+                className="group inline-flex items-center space-x-3 px-8 py-4 border-2 border-foreground/20 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105"
+              >
+                <BookOpen className="h-5 w-5" />
+                <span>Alle Fakten</span>
+              </Link>
+
+              <Link
+                to="/statistics"
+                className="group inline-flex items-center space-x-3 px-8 py-4 border-2 border-foreground/20 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105"
+              >
+                <BarChart3 className="h-5 w-5" />
+                <span>Statistiken</span>
+              </Link>
+            </div>
+
+            <div className="pt-6">
+              <Link
+                to="/sources"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+              >
+                <FileText className="h-4 w-4" />
+                <span>Alle Quellen ansehen</span>
+                <ArrowDown className="h-3 w-3 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

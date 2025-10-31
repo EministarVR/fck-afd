@@ -18,7 +18,7 @@ const DiscordSection = () => {
 
   const joinDiscord = () => {
     // Platzhalter - hier sollte ein echter Discord-Link hin
-    window.open("https://discord.gg/your-discord-invite", "_blank", "noopener,noreferrer");
+    window.open("https://discord.gg/KE4Aj9YX96", "_blank", "noopener,noreferrer");
   };
 
   return (

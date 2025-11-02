@@ -99,7 +99,7 @@ const MythBusterGame = () => {
             </div>
             <p className="text-xl text-muted-foreground">
               {score === myths.length && "Perfekt! Du kennst dich aus."}
-              {score >= myths.length * 0.7 && score < myths.length && "Sehr gut! Du bist gut informiert."}
+              {score >= myths.length * 0.7 && score < myths.length && "Sehr gut! Du bist gut informiert. Scheinbar bist du kein AfD-Wähler. Mach weiter so!"}
               {score >= myths.length * 0.5 && score < myths.length * 0.7 && "Nicht schlecht! Es gibt noch einiges zu lernen."}
               {score < myths.length * 0.5 && "Informiere dich weiter über die Fakten!"}
             </p>

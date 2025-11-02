@@ -8,6 +8,9 @@ import Facts from "./pages/Facts";
 import Statistics from "./pages/Statistics";
 import Sources from "./pages/Sources";
 import About from "./pages/About";
+import Quiz from "./pages/Quiz";
+import Arguments from "./pages/Arguments";
+import Actions from "./pages/Actions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +27,9 @@ const App = () => (
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/sources" element={<Sources />} />
           <Route path="/about" element={<About />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/arguments" element={<Arguments />} />
+          <Route path="/actions" element={<Actions />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

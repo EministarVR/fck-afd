@@ -13,9 +13,7 @@ import SourcesSection from "@/components/SourcesSection";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
-import MythBusterGame from "@/components/MythBusterGame";
-import ArgumentHelper from "@/components/ArgumentHelper";
-import ActionCenter from "@/components/ActionCenter";
+import InteractivePreview from "@/components/InteractivePreview";
 
 const Index = () => {
   return (
@@ -26,11 +24,9 @@ const Index = () => {
       <ArgumentsSection />
       <ImpactSection />
       <TimelineSection />
-      <MythBusterGame />
-      <ArgumentHelper />
       <QuotesSection />
       <StatisticsSection />
-      <ActionCenter />
+      <InteractivePreview />
       <FAQSection />
       <DiscordSection />
       <NewsletterSection />

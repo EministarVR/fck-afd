@@ -81,6 +81,30 @@ const Header = () => {
           >
             Über
           </Link>
+          <Link
+            to="/quiz"
+            className={`text-sm transition-colors ${
+              isActive("/quiz") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Quiz
+          </Link>
+          <Link
+            to="/arguments"
+            className={`text-sm transition-colors ${
+              isActive("/arguments") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Argumente
+          </Link>
+          <Link
+            to="/actions"
+            className={`text-sm transition-colors ${
+              isActive("/actions") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Aktionen
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -146,6 +170,33 @@ const Header = () => {
               }`}
             >
               Über
+            </Link>
+            <Link
+              to="/quiz"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/quiz") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Quiz
+            </Link>
+            <Link
+              to="/arguments"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/arguments") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Argumente
+            </Link>
+            <Link
+              to="/actions"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/actions") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Aktionen
             </Link>
           </div>
         </div>

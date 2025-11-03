@@ -55,12 +55,12 @@ const Hero = () => {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-16 text-center">
-          <div className="space-y-8 animate-fade-in-up">
-            <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-bold tracking-tighter leading-none gradient-text">
+          <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[12rem] font-bold tracking-tighter leading-none gradient-text px-4">
               FUCK-AFD
             </h1>
             
-            <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto font-medium px-4">
               Für ein Verbot — weil rechte Politik Menschen schadet
             </p>
           </div>
@@ -90,28 +90,28 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4">
               <button
                 onClick={scrollToStats}
-                className="group inline-flex items-center space-x-3 px-8 py-4 bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all hover:scale-105"
+                className="group inline-flex items-center justify-center space-x-2 sm:space-x-3 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all hover:scale-105 text-sm sm:text-base"
               >
-                <ArrowDown className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-y-1 transition-transform" />
                 <span>Mehr erfahren</span>
               </button>
 
               <Link
                 to="/facts"
-                className="group inline-flex items-center space-x-3 px-8 py-4 border-2 border-foreground/20 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105"
+                className="group inline-flex items-center justify-center space-x-2 sm:space-x-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-foreground/20 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105 text-sm sm:text-base"
               >
-                <BookOpen className="h-5 w-5" />
+                <BookOpen className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Alle Fakten</span>
               </Link>
 
               <Link
                 to="/statistics"
-                className="group inline-flex items-center space-x-3 px-8 py-4 border-2 border-foreground/20 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105"
+                className="group inline-flex items-center justify-center space-x-2 sm:space-x-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-foreground/20 text-foreground font-semibold hover:border-foreground hover:bg-foreground/5 transition-all hover:scale-105 text-sm sm:text-base"
               >
-                <BarChart3 className="h-5 w-5" />
+                <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Statistiken</span>
               </Link>
             </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Gamepad2, MessageSquare, Megaphone, ArrowRight } from "lucide-react";
+import { Gamepad2, MessageSquare, Megaphone, BookOpen, Scale, AlertCircle, ArrowRight } from "lucide-react";
 
 const InteractivePreview = () => {
   const features = [
@@ -23,6 +23,27 @@ const InteractivePreview = () => {
       description: "Werde aktiv und setze ein Zeichen",
       link: "/actions",
       color: "from-red-500/20 to-orange-500/20"
+    },
+    {
+      icon: BookOpen,
+      title: "Glossar",
+      description: "Wichtige Begriffe verständlich erklärt",
+      link: "/glossary",
+      color: "from-yellow-500/20 to-amber-500/20"
+    },
+    {
+      icon: Scale,
+      title: "Vergleich",
+      description: "AfD vs. Demokratische Parteien im direkten Vergleich",
+      link: "/comparison",
+      color: "from-cyan-500/20 to-blue-500/20"
+    },
+    {
+      icon: AlertCircle,
+      title: "Mythen aufgeklärt",
+      description: "Verbreitete Irrtümer über die AfD richtiggestellt",
+      link: "/myths",
+      color: "from-pink-500/20 to-rose-500/20"
     }
   ];
 
@@ -38,7 +59,7 @@ const InteractivePreview = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (

@@ -105,6 +105,30 @@ const Header = () => {
           >
             Aktionen
           </Link>
+          <Link
+            to="/glossary"
+            className={`text-sm transition-colors ${
+              isActive("/glossary") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Glossar
+          </Link>
+          <Link
+            to="/comparison"
+            className={`text-sm transition-colors ${
+              isActive("/comparison") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Vergleich
+          </Link>
+          <Link
+            to="/myths"
+            className={`text-sm transition-colors ${
+              isActive("/myths") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Mythen
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -197,6 +221,33 @@ const Header = () => {
               }`}
             >
               Aktionen
+            </Link>
+            <Link
+              to="/glossary"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/glossary") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Glossar
+            </Link>
+            <Link
+              to="/comparison"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/comparison") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Vergleich
+            </Link>
+            <Link
+              to="/myths"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block w-full text-left text-sm transition-colors py-2 ${
+                isActive("/myths") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Mythen
             </Link>
           </div>
         </div>

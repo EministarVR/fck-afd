@@ -1,11 +1,32 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Home, FileText, BarChart3, BookOpen, Info, Brain, MessageSquare, Zap, BookMarked, GitCompare, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+const menuItems = [
+  { path: "/", label: "Home", icon: Home },
+  { path: "/facts", label: "Fakten", icon: FileText },
+  { path: "/statistics", label: "Statistiken", icon: BarChart3 },
+  { path: "/sources", label: "Quellen", icon: BookOpen },
+  { path: "/about", label: "Über", icon: Info },
+  { path: "/quiz", label: "Quiz", icon: Brain },
+  { path: "/arguments", label: "Argumente", icon: MessageSquare },
+  { path: "/actions", label: "Aktionen", icon: Zap },
+  { path: "/glossary", label: "Glossar", icon: BookMarked },
+  { path: "/comparison", label: "Vergleich", icon: GitCompare },
+  { path: "/myths", label: "Mythen", icon: Shield },
+];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -40,218 +61,72 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link
-            to="/"
-            className={`text-sm transition-colors ${
-              isActive("/") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            to="/facts"
-            className={`text-sm transition-colors ${
-              isActive("/facts") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Fakten
-          </Link>
-          <Link
-            to="/statistics"
-            className={`text-sm transition-colors ${
-              isActive("/statistics") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Statistiken
-          </Link>
-          <Link
-            to="/sources"
-            className={`text-sm transition-colors ${
-              isActive("/sources") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Quellen
-          </Link>
-          <Link
-            to="/about"
-            className={`text-sm transition-colors ${
-              isActive("/about") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Über
-          </Link>
-          <Link
-            to="/quiz"
-            className={`text-sm transition-colors ${
-              isActive("/quiz") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Quiz
-          </Link>
-          <Link
-            to="/arguments"
-            className={`text-sm transition-colors ${
-              isActive("/arguments") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Argumente
-          </Link>
-          <Link
-            to="/actions"
-            className={`text-sm transition-colors ${
-              isActive("/actions") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Aktionen
-          </Link>
-          <Link
-            to="/glossary"
-            className={`text-sm transition-colors ${
-              isActive("/glossary") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Glossar
-          </Link>
-          <Link
-            to="/comparison"
-            className={`text-sm transition-colors ${
-              isActive("/comparison") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Vergleich
-          </Link>
-          <Link
-            to="/myths"
-            className={`text-sm transition-colors ${
-              isActive("/myths") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Mythen
-          </Link>
+        <nav className="hidden lg:flex items-center space-x-6">
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`text-sm transition-all duration-200 ${
+                isActive(item.path)
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-4 w-4" />
-          ) : (
-            <Menu className="h-4 w-4" />
-          )}
-        </Button>
+        {/* Mobile Menu */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden hover:bg-primary/10"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent 
+            side="right" 
+            className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-border/50"
+          >
+            <SheetHeader className="border-b border-border/50 pb-4">
+              <SheetTitle className="flex items-center gap-3">
+                <img
+                  src="https://star-dev.xyz/fck.jpg"
+                  alt="FCK Logo"
+                  className="h-8 w-8 rounded-sm object-cover"
+                />
+                <span className="text-lg font-bold">FUCK-AFD</span>
+              </SheetTitle>
+            </SheetHeader>
+            
+            <nav className="flex flex-col gap-1 mt-6">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                const active = isActive(item.path);
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                      active
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-base">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-card border-t border-border">
-          <div className="container mx-auto px-6 py-4 space-y-1">
-            <Link
-              to="/"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/facts"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/facts") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Fakten
-            </Link>
-            <Link
-              to="/statistics"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/statistics") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Statistiken
-            </Link>
-            <Link
-              to="/sources"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/sources") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Quellen
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/about") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Über
-            </Link>
-            <Link
-              to="/quiz"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/quiz") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Quiz
-            </Link>
-            <Link
-              to="/arguments"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/arguments") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Argumente
-            </Link>
-            <Link
-              to="/actions"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/actions") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Aktionen
-            </Link>
-            <Link
-              to="/glossary"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/glossary") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Glossar
-            </Link>
-            <Link
-              to="/comparison"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/comparison") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Vergleich
-            </Link>
-            <Link
-              to="/myths"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block w-full text-left text-sm transition-colors py-2 ${
-                isActive("/myths") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Mythen
-            </Link>
-          </div>
-        </div>
-      )}
     </header>
   );
 };

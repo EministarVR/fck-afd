@@ -121,9 +121,7 @@ const Map = () => {
 
         <div className="mb-12">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Karte der Vorfälle
-            </span>
+            Karte der Vorfälle
           </h1>
           <p className="text-muted-foreground text-sm md:text-base max-w-3xl">
             Eine Dokumentation rechtsextremer Vorfälle im Zusammenhang mit der AfD. 

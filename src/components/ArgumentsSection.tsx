@@ -44,25 +44,20 @@ const ArgumentsSection = () => {
 
   return (
     <section id="arguments" className="relative py-20 md:py-32 px-4 md:px-6 overflow-hidden">
-      {/* Enhanced Background effects */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[150px]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px]" />
       
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="mb-12 md:mb-20 animate-fade-in-up text-center">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Warum ein Verbot?
-            </span>
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="mb-12 md:mb-20 animate-fade-in-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-6">
+            Warum ein Verbot?
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl leading-relaxed">
             Die AfD ist eine konkrete Gefahr für unsere Demokratie. Die Beweise sind erdrückend. 
             Hier sind die dokumentierten Fakten.
           </p>
         </div>
 
-        {/* Improved grid with better spacing and borders */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
           {argumentCards.map((arg, index) => (
             <ArgumentCard
               key={index}
@@ -75,11 +70,10 @@ const ArgumentsSection = () => {
           ))}
         </div>
 
-        {/* Enhanced CTA */}
         <div className="text-center mt-12 md:mt-16 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
           <Link
             to="/facts"
-            className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold hover:opacity-90 transition-all hover:scale-105 group shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 border-2 border-foreground text-foreground font-semibold hover:bg-foreground hover:text-background transition-all hover:scale-105 group"
           >
             <span className="text-sm md:text-base">Alle Fakten im Detail</span>
             <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />

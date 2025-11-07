@@ -14,6 +14,8 @@ import Actions from "./pages/Actions";
 import Glossary from "./pages/Glossary";
 import Comparison from "./pages/Comparison";
 import Myths from "./pages/Myths";
+import Map from "./pages/Map";
+import Timeline from "./pages/Timeline";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +38,8 @@ const App = () => (
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/myths" element={<Myths />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/timeline" element={<Timeline />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

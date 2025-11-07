@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, Home, FileText, BarChart3, BookOpen, Info, Brain, MessageSquare, Zap, BookMarked, GitCompare, Shield } from "lucide-react";
+import { Menu, Home, FileText, BarChart3, BookOpen, Info, Brain, MessageSquare, Zap, BookMarked, GitCompare, Shield, Map, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Sheet,
   SheetContent,
@@ -22,6 +23,8 @@ const menuItems = [
   { path: "/glossary", label: "Glossar", icon: BookMarked },
   { path: "/comparison", label: "Vergleich", icon: GitCompare },
   { path: "/myths", label: "Mythen", icon: Shield },
+  { path: "/map", label: "Karte", icon: Map },
+  { path: "/timeline", label: "Chronologie", icon: Clock },
 ];
 
 const Header = () => {
@@ -90,9 +93,9 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent 
             side="right" 
-            className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-border/50"
+            className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-border/50 p-0 flex flex-col"
           >
-            <SheetHeader className="border-b border-border/50 pb-4">
+            <SheetHeader className="border-b border-border/50 pb-4 pt-6 px-6">
               <SheetTitle className="flex items-center gap-3">
                 <img
                   src="https://star-dev.xyz/fck.jpg"
@@ -103,27 +106,29 @@ const Header = () => {
               </SheetTitle>
             </SheetHeader>
             
-            <nav className="flex flex-col gap-1 mt-6">
-              {menuItems.map((item) => {
-                const Icon = item.icon;
-                const active = isActive(item.path);
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
-                      active
-                        ? "bg-primary/10 text-primary font-medium"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                    <span className="text-base">{item.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
+            <ScrollArea className="flex-1 px-6">
+              <nav className="flex flex-col gap-1 py-6">
+                {menuItems.map((item) => {
+                  const Icon = item.icon;
+                  const active = isActive(item.path);
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                        active
+                          ? "bg-primary/10 text-primary font-medium"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                    >
+                      <Icon className="h-5 w-5 flex-shrink-0" />
+                      <span className="text-base">{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
+            </ScrollArea>
           </SheetContent>
         </Sheet>
       </div>
